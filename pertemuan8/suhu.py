@@ -1,5 +1,27 @@
 from tkinter import Frame,Label,Entry,Button,YES,BOTH,END,Tk,W
-from celcius import *
+
+ 
+class Celcius:
+    def __init__(self, suhu):
+     self.suhu = suhu
+
+    def get_celcius(self):
+         val = self.suhu
+         return val
+
+    
+    def get_fahrenheit (self): 
+     val = (9/5* self.suhu) + 32
+     return val
+
+    def get_reamur (self):
+        val =  (4/5* self.suhu)
+        return val
+    
+    def get_kelvin(self):
+        val = self.suhu + 273
+        return val
+
 class FrmCelcius:
     def __init__(self, parent, title):
         self.parent = parent       
@@ -57,8 +79,8 @@ class FrmCelcius:
     def onKeluar(self, event=None):
         # memberikan perintah menutup aplikasi
         self.parent.destroy()
-        
+
 if __name__ == '__main__':
     root = Tk()  
     aplikasi = FrmCelcius(root, "Program Konversi Suhu Celcius")
-    root.mainloop() 
+    root.mainloop()
